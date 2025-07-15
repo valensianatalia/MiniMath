@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalkulator Faktorial</title>
+  <style>
+    :root {
+      --primary-dark: #16697A;
+      --primary: #489FB5;
+      --secondary: #82C0CC;
+      --background: #EDE7E3;
+      --accent: #FFA62B;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--background);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: var(--primary-dark);
+      color: white;
+      padding: 50px 20px 40px;
+      text-align: center;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    input[type="number"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 60px;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #e38d13;
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: var(--primary-dark);
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: var(--primary-dark);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kalkulator Faktorial</h1>
+  </header>
+  <main>
+    <p>Masukkan angka untuk menghitung faktorial:</p>
+    <input type="number" id="angka" min="0" value="5" />
+    <button onclick="hitungFaktorial()">Hitung</button>
+    <div id="result"></div>
+    <a href="index.html" class="back">&larr; Kembali ke Beranda</a>
+  </main>
+  <script>
+    function hitungFaktorial() {
+      const n = parseInt(document.getElementById("angka").value);
+      const resultDiv = document.getElementById("result");
+
+      if (isNaN(n) || n < 0) {
+        resultDiv.innerHTML = "Masukkan angka yang valid (>= 0).";
+        return;
+      }
+
+      let hasil = 1;
+      for (let i = 2; i <= n; i++) {
+        hasil *= i;
+      }
+
+      resultDiv.innerHTML = `${n}! = ${hasil}`;
+    }
+  </script>
+</body>
+</html>

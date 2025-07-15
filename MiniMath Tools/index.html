@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiniMath</title>
+  <style>
+    :root {
+      --primary-dark: #16697A;
+      --primary: #489FB5;
+      --secondary: #82C0CC;
+      --background: #EDE7E3;
+      --accent: #82C0CC;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--background);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: var(--primary-dark);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 300px;
+      margin: 30px auto;
+    }
+    a.button {
+      display: block;
+      padding: 15px;
+      background-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+    a.button:hover {
+      background-color: #489FB5; /* lebih gelap dari #FFA62B */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MiniMath Tools</h1>
+    <p>Welcome to MiniMath!</p>
+  </header>
+  <main>
+    <h2>Menu</h2>
+    <div class="nav-buttons">
+      <a href="fibonacci.html" class="button">Fibonacci</a>
+      <a href="tribonacci.html" class="button">Tribonacci</a>
+      <a href="faktorial.html" class="button">Faktorial</a>
+    </div>
+  </main>
+</body>
+</html>
